@@ -1,6 +1,6 @@
 using System;
 
-class Program {
+class Aula1 {
   public static void Main (string[] args) {
     Console.WriteLine ("Hello World");
   }
