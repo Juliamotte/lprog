@@ -8,5 +8,8 @@ class Aluno {
     return this.periodo == disciplina.semestre;
   }
 }
-  
+  public override bool Validar() {
+    return this.Matricula != null &&
+      this.Matricula.Length > 0;
+  }
 }

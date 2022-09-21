@@ -1,3 +1,5 @@
+using modelos;
+
 namespace Modelos {
   class Aluno {
     public string matricula;
@@ -26,6 +28,9 @@ namespace Modelos {
       this.matricula = matricula;
       this.nome = nome;
     }
-    
+
+    public bool Matricular(Disciplina disciplina){
+    return this.periodo == disciplina.semestre;
+    }
   }
 }
