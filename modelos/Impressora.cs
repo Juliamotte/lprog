@@ -1,35 +1,62 @@
+using System;
+
 namespace Modelos {
 
   class Impressora {
-    
-    public static void print (Pessoa pessoa) {
-    Console.WriteLine(
-      ".........................\n" +
-      "Nome: " + aluno.nome + "\n" +
-      "CPF : " + aluno.Cpf + "\n"  +
-      "........................."
-    );
-  }
-  
-  public static void print (Aluno aluno) {
-  Console.WriteLine(
-      ".........................\n" +
-      "Matricula: " + aluno.matricula + "\n" +
-      "Nome: " + aluno.nome + "\n" +
-      "CPF : " + aluno.Cpf + "\n"  +
-      "Periodo: " + aluno.periodo + "\n" +
-      "........................."
-    );
-  }
-}
 
-  public static void print (Familiar familiar) {
-  Console.WriteLine(
-      ".........................\n" +
-      "Nome: " + familiar.nome + "\n" +
-      "CPF : " + familiar.Cpf + "\n"  +
-      "Parentesco: " +familiar.Parentesco + "\n" +
-      "........................."
-    );
+    public static void Imprimir(Object obj) {
+      Console.WriteLine("-------------------------");
+      if (obj is Pessoa) {
+        Imprimir((Pessoa) obj);
+      }
+      if (obj is Professor) {
+        Imprimir((Professor) obj);
+      }
+      if (obj is Aluno) {
+        Imprimir((Aluno) obj);
+      }
+      if (obj is Disciplina) {
+        Imprimir((Disciplina) obj);
+      }
+      if (obj is Contato) {
+        Imprimir((Contato) obj);
+      }
+      Console.WriteLine("-------------------------");
+    }
+
+    private static void Imprimir(Pessoa pessoa) {
+      Console.WriteLine(
+        "Nome: " + pessoa.Nome + "\n" +
+        "CPF: " + pessoa.Cpf
+      );
+    }
+
+    private static void Imprimir(Contato contato) {
+      Console.WriteLine(
+       contato.Informar()
+      );
+    }
+
+    private static void Imprimir(Professor professor) {
+      Console.WriteLine(
+        "Codigo: " + professor.Codigo
+      );
+    }
+    
+    private static void Imprimir(Aluno aluno) {
+      Console.WriteLine(
+        "Matricula: " + aluno.Matricula + "\n" +
+        "Periodo: " + aluno.Periodo
+      );
+    }
+
+    private static void Imprimir(Disciplina disciplina) {
+      Console.WriteLine(
+        "Nome: " + disciplina.Nome + "\n" +
+        "Semestre: " + disciplina.Semestre
+      );
+    }
+    
   }
+
 }
