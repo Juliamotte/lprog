@@ -2,7 +2,8 @@ namespace Modelos {
 
   interface Pagina<T> {
 
-    string Formatar(T t);
+    Texto Formatar(T t);
     
   }
+  
 }
